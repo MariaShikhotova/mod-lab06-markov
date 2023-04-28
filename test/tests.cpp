@@ -64,11 +64,7 @@ TEST(TestCaseName5, Test5) {
 
   int textLength = 3;
 
-  std::map<std::string, std::vector<std::string>> markovChain;
-
   text text;
-  text.read(filename, markovChain, prefixLength);
-
   text.read(filename, markovChain, prefixLength);
   std::string s1 = "My name is";
   std::string s2 = "name is";
