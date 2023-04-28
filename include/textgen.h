@@ -12,9 +12,9 @@
 class text {
  public:
   void read(std::string filename,
-            std::map<std::string, std::vector<std::string>>& markovChain,
+            const std::map<std::string, std::vector<std::string>>& markovChain,
             int prefixLength);
-  void generate(std::map<std::string, std::vector<std::string>> markovChain,
+  void generate(const std::map<std::string, std::vector<std::string>> markovChain,
                 int prefixLength, int textLength);
   std::vector<std::string> prefix;
   std::string stop;
