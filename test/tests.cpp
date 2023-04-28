@@ -1,5 +1,4 @@
 // Copyright 2021 GHA Test Team
-#include "pch.h"
 #include "textgen.h"
 #include <gtest/gtest.h>
 
