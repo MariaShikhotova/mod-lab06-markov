@@ -29,6 +29,7 @@ std::map<std::string, std::vector<std::string>> text::read(
     file.close();
     return Chain;
   }
+    return 0;
 }
 void text::generate(
     const std::map<std::string, std::vector<std::string>> markovChain,
