@@ -10,7 +10,7 @@ TEST(TestCaseName1, Test1) {
   std::map<std::string, std::vector<std::string>> markovChain;
 
   text text;
-  text.read(filename, markovChain, prefixLength);
+  markovChain = text.read(filename, markovChain, prefixLength);
   bool flag = true;
   if (text.prefix.size() != 2) flag = false;
 
@@ -24,7 +24,7 @@ TEST(TestCaseName2, Test2) {
   std::map<std::string, std::vector<std::string>> markovChain;
 
   text text;
-  text.read(filename, markovChain, prefixLength);
+  markovChain = text.read(filename, markovChain, prefixLength);
   std::string s = markovChain["My name"][0];
   EXPECT_EQ(s, "is");
 }
@@ -36,7 +36,7 @@ TEST(TestCaseName3, Test3) {
   std::map<std::string, std::vector<std::string>> markovChain;
 
   text text;
-  text.read(filename, markovChain, prefixLength);
+  markovChain = text.read(filename, markovChain, prefixLength);
   std::string s = markovChain["My"][0];
   EXPECT_EQ(s, "name");
 }
@@ -48,7 +48,7 @@ TEST(TestCaseName4, Test4) {
   std::map<std::string, std::vector<std::string>> markovChain;
 
   text text;
-  text.read(filename, markovChain, prefixLength);
+  markovChain = text.read(filename, markovChain, prefixLength);
   std::string s1 = markovChain["My name"][0];
   std::string s2 = markovChain["name is"][0];
   EXPECT_EQ(s1, "is");
@@ -65,7 +65,7 @@ TEST(TestCaseName5, Test5) {
   int textLength = 3;
 
   text text;
-  text.read(filename, markovChain, prefixLength);
+  markovChain = text.read(filename, markovChain, prefixLength);
   std::string s1 = "My name is";
   std::string s2 = "name is";
   if (text.generateText == s1 || text.generateText == s2) flag = true;
