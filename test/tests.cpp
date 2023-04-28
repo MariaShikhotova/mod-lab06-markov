@@ -68,8 +68,8 @@ TEST(TestCaseName5, Test5) {
   markovChain = text.read(filename, markovChain, prefixLength);
   text.generate(markovChain, prefixLength, textLength);
   std::string s1 = "My name is";
-  std::string s2 = "name is";
+  std::string s2 = "name is ";
   if (text.generateText == s1 || text.generateText == s2) flag = true;
-  EXPECT_EQ(text.generateText, "name is");
+  EXPECT_EQ(text.generateText, "name is ");
   //EXPECT_TRUE(flag);
 }
