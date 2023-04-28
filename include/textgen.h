@@ -14,8 +14,9 @@ class text {
   void read(std::string filename,
             const std::map<std::string, std::vector<std::string>>& markovChain,
             int prefixLength);
-  void generate(const std::map<std::string, std::vector<std::string>> markovChain,
-                int prefixLength, int textLength);
+  void generate(
+      const std::map<std::string, std::vector<std::string>> markovChain,
+      int prefixLength, int textLength);
   std::vector<std::string> prefix;
   std::string stop;
   std::string generateText;
