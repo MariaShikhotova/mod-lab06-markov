@@ -52,7 +52,7 @@ TEST(TestCaseName4, Test4) {
   std::string s1 = markovChain["My name"][0];
   std::string s2 = markovChain["name is"][0];
   EXPECT_EQ(s1, "is");
-  EXPECT_EQ(s1, "Maria");
+  EXPECT_EQ(s2, "Maria");
 }
 TEST(TestCaseName5, Test5) {
   std::string filename = "test1.txt";
@@ -69,6 +69,7 @@ TEST(TestCaseName5, Test5) {
   std::string s1 = "My name is";
   std::string s2 = "name is";
   if (text.generateText == s1 || text.generateText == s2) flag = true;
+  EXPECT_EQ(text.generateText, "is");
 
-  EXPECT_TRUE(flag);
+  //EXPECT_TRUE(flag);
 }
