@@ -1,7 +1,7 @@
 // Copyright 2021 GHA Test Team
 #include "textgen.h"
 
-void text::read(
+std::map<std::string, std::vector<std::string>> text::read(
     std::string filename,
     const std::map<std::string, std::vector<std::string>>& markovChain,
     int prefixLength) {
@@ -27,6 +27,7 @@ void text::read(
       stop = key;
     }
     file.close();
+    return Chain;
   }
 }
 
