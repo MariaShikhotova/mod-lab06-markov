@@ -1,11 +1,12 @@
 // Copyright 2021 GHA Test Team
 #include "textgen.h"
 
-void text::read(std::string filename,
-                std::map<std::string, std::vector<std::string>>& markovChain,
-                int prefixLength) {
+void text::read(
+    std::string filename,
+    const std::map<std::string, std::vector<std::string>>& markovChain,
+    int prefixLength) {
   std::ifstream file(filename);
-
+  std::map<std::string, std::vector<std::string>> Chain = markovChain;
   if (file.is_open()) {
     std::string word;
 
@@ -20,7 +21,7 @@ void text::read(std::string filename,
       }
       key += prefix.back();
 
-      markovChain[key].push_back(word);
+      Chain[key].push_back(word);
       prefix.erase(prefix.begin());
       prefix.push_back(word);
       stop = key;
@@ -29,8 +30,10 @@ void text::read(std::string filename,
   }
 }
 
-void text::generate(std::map<std::string, std::vector<std::string>> markovChain,
-                    int prefixLength, int textLength) {
+void text::generate(
+    const std::map<std::string, std::vector<std::string>> markovChain,
+    int prefixLength, int textLength) {
+  std::map<std::string, std::vector<std::string>> Chain = markovChain;
   generateText = "";
   srand(time(NULL));
   int index = std::rand() % markovChain.size();
@@ -46,8 +49,8 @@ void text::generate(std::map<std::string, std::vector<std::string>> markovChain,
 
   std::string nextWord;
   while (i < textLength - prefixLength && key != stop) {
-    std::vector<std::string> possibleWords = markovChain[key];
-    nextWord = possibleWords[std::rand() % possibleWords.size()];
+    std::vector<std::string> possibleWords = Chain[key];
+    nextWord = possibleWords[rand() % possibleWords.size()];
     std::cout << nextWord << " ";
     generateText += nextWord;
     if (prefixLength > 1)
