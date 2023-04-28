@@ -30,7 +30,6 @@ std::map<std::string, std::vector<std::string>> text::read(
     return Chain;
   }
 }
-
 void text::generate(
     const std::map<std::string, std::vector<std::string>> markovChain,
     int prefixLength, int textLength) {
