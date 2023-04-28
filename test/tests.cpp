@@ -66,6 +66,7 @@ TEST(TestCaseName5, Test5) {
 
   text text;
   markovChain = text.read(filename, markovChain, prefixLength);
+  text.generate(markovChain, prefixLength, textLength);
   std::string s1 = "My name is";
   std::string s2 = "name is";
   if (text.generateText == s1 || text.generateText == s2) flag = true;
