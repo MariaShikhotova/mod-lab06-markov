@@ -1,3 +1,6 @@
+// Copyright 2021 GHA Test Team
+#pragma once
+#include <stdexcept>
 #include <fstream>
 #include <string>
 #include <map>
