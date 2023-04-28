@@ -1,3 +1,4 @@
+// Copyright 2021 GHA Test Team
 #include "textgen.h"
 
 void text::read(std::string filename,
