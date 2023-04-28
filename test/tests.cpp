@@ -1,6 +1,6 @@
 // Copyright 2021 GHA Test Team
-#include "textgen.h"
 #include <gtest/gtest.h>
+#include "textgen.h"
 
 TEST(TestCaseName1, Test1) {
   std::string filename = "test1.txt";
