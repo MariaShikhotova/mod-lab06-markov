@@ -33,7 +33,7 @@ void text::generate(std::map<std::string, std::vector<std::string>> markovChain,
                     int prefixLength, int textLength) {
   generateText = "";
   srand(time(NULL));
-  int index = rand() % markovChain.size();
+  int index = std::rand() % markovChain.size();
   auto it = markovChain.begin();
   for (int i = 0; i < index; i++) {
     it++;
@@ -47,7 +47,7 @@ void text::generate(std::map<std::string, std::vector<std::string>> markovChain,
   std::string nextWord;
   while (i < textLength - prefixLength && key != stop) {
     std::vector<std::string> possibleWords = markovChain[key];
-    nextWord = possibleWords[rand() % possibleWords.size()];
+    nextWord = possibleWords[std::rand() % possibleWords.size()];
     std::cout << nextWord << " ";
     generateText += nextWord;
     if (prefixLength > 1)
